@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>Indigo Renderer - {{ page.title }}</title>
+    <link rel="stylesheet" href="/stylesheets/reset.css" />
+    <link rel="stylesheet" href="/stylesheets/text.css" />
+    <link rel="stylesheet" href="/stylesheets/960.css" />
+    <link rel="stylesheet" href="/stylesheets/docx.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        var i = 0;
+        
+        $("h2").each(function(){
+          i++;
+
+          if(i<2){
+            return;
+          }
+          
+          var h2 = $(this);
+          var li = $("<li />");
+          $("<a />").html(h2.html()).attr("href", "#anchor_" + i).appendTo(li);
+          
+          li.appendTo("#contents");
+
+          h2.wrap("<a />").parent().attr("name", "anchor_" + i);
+
+        })
+      })
+    </script>
+
+    </head>
+  <body>
+    <div class="heading">
+      <h1>
+        <a href="/">Indigo Scene Format Technical Reference</a>
+      </h1>
+    </div>
+
+    <div class="container_12" id="wrapper">
+
+
+      <div class="grid_8">
+        {{content }}
+      </div>
+
+      <div class="grid_3 prefix_1">
+        <div>
+          <h3>Contents:</h3>
+        
+          <hr />
+        
+          <ul id="contents">
+          </ul>
+        </div>
+      </div>
+      
+
+
+      <div class="push"></div>
+      <br style="clear: both" />
+    </div>
+
+  </body>
+</html>

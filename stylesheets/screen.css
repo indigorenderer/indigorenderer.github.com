@@ -1,0 +1,123 @@
+#main {
+  width: 60em;
+	margin: auto;
+}
+
+body {
+  font-size: 0.8em;
+  font-family: 'Helvetica Neue', helvetica, sans-serif;
+  line-height: 20px;
+  color: #111111;
+}
+a { color: #0033aa; }
+a:visited { color: #555555; }
+a:hover { color: #cc5500; }
+body, html {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  width: 600px;
+  padding: 20px;
+  padding-top: 40px;
+  min-height: 200px;
+  margin: auto;
+}
+.post {
+  position: relative;
+  padding-left: 25px;
+}
+.post .meta {
+  position: absolute;
+  background: white;
+  color: white;
+  padding: 10px;
+  -webkit-transform: rotate(-5deg);
+  font-size: 0.8em;
+  text-align: center;
+  font-weight: bold;
+  top: -10px;
+  right: 590px;
+  color: #666666;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 10;
+}
+.post { margin-bottom: 50px; }
+.post h1 {
+  text-shadow: 1px 1px 1px white;
+  color: #333333;
+  letter-spacing: -1px;
+  font-size: 25px;
+  position: relative;
+  left: -1px;
+}
+.post h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333333;
+  text-shadow: 1px 1px 1px #ffffff;
+}
+pre {
+  background: white;
+  border-left: 1px solid #aaaaaa;
+  padding: 0 10px;
+  color: #333333;
+  line-height: 1.2em;
+  margin-bottom: 15px;
+}
+code {
+  font-family: 'Andale Mono', 'Monaco';
+  font-size: 11px;
+}
+
+
+.heading h1{
+	font-family: helvetica, arial, serif;
+	letter-spacing: -4px;
+	font-size: 70px;
+	font-weight: normal;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	bottom: 0;
+	left: 30px;
+}
+
+.heading { 
+	background: #FF1168;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FF1168), to(#FF3388)); 
+	position: relative;
+	height: 150px;
+}
+
+.heading h1 a{
+	color: white;
+	text-decoration: none;
+	background: black;
+	padding-right: 10px;
+	display: block;
+	padding: 15px;
+	line-height: 60px;
+	height: 60px;
+}
+
+.heading .actions{
+	position: absolute;
+	bottom: 0;
+	right: 25px;
+}
+
+.heading .actions a{
+	font-family: helvetica, arial, serif;
+	color: black;
+	text-shadow: 1px 1px 1px rgba(255,255,255,1);
+	font-weight: bold;
+	font-size: 18px;
+	text-decoration: none;
+	float: left;
+	padding: 10px;
+	margin-right: 5px;
+}
+

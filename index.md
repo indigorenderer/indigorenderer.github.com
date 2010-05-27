@@ -26,7 +26,7 @@ Please not that the Indigo application is not opensourced, and software that use
 
 This document is current for Indigo Renderer version 2.4.
 
-This document was auto converted from our original .odt file and may have formatting errors and mistakes. Feel free to clone this github repository and push any changes or fixes back to us.
+This document was auto converted from our original .odt file and may have formatting errors and mistakes. Feel free to clone [this github repository](http://indigorenderer.github.com/) and push any changes or fixes back to us.
 
 ## Introduction to the .IGS format
 

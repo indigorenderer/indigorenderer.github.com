@@ -16,7 +16,7 @@ Last updated 27th May 2010.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/nz/"><img alt="Creative Commons License" style="float: left; padding: 0 20px 1em 0; border-width:0" src="http://creativecommons.org/images/public/somerights20.png" /></a>.
 
-This document is Copyright (c) Glare Technologies 2004-2010 and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/nz/">Creative Commons Attribution-Share Alike 3.0  License</a>, you are free to share and remix this document under the terms of the licence.
+This document is copyright (c) Glare Technologies 2004-2010 and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/nz/">Creative Commons Attribution-Share Alike 3.0  License</a>, you are free to share and remix this document under the terms of the licence.
 
 ### Overview of this document
 
@@ -35,6 +35,66 @@ is .igs, for 'Indigo Scene'.
 
 Root element should be called 'scene'. 
 
+## Indigo Mesh Format
+
+The Indigo mesh (.igmesh) format is a binary mesh format used by Indigo. See these example implementations for more details:
+
+ * [C++](/igmesh/cc/indigo_mesh.cc)
+ * [Python](/igmesh/python/igmesh.py)
+
+The layout of the format is as follows:
+
+    // uint32 is an unsigned 32 bit integer
+    // float is a single precision (32 bit) IEEE 754 floating point number.
+    // Byte order is little endian.
+    // bleh a[9] means that 'a' is an array of 9 'bleh's.
+
+    // Some composite structures as used below:
+    class Triangle
+    {
+       uint32 vertex_indices[3];
+       uint32 uv_indices[3];
+       uint32 tri_mat_index;
+    }
+
+    // ASCII string
+    class String
+    {
+       uint32 size // max length 1024
+       char8 data[size] // not null terminated
+    }
+
+    class UVSetExposition
+    {
+       String uv_set_name
+       uint32 uv_set_index
+    }
+
+
+    // The actual format:
+    uint32 magic number // should be 5456751
+    uint32 format_version // 1
+    uint32 num_uv_mappings
+
+    uint32 num_used_materials
+    String used_materials[num_used_materials]
+
+    uint32 num_uv_set_expositions
+    UVSetExposition uv_set_expositions[num_uv_set_expositions]
+
+    uint32 num_vert_positions
+    Vec3f vert_positions[num_vert_positions]
+
+    uint32 num_vert_normals // should either be 0 or equal to num_vert_positions
+    Vec3f vert_normals[num_vert_normals]
+
+    uint32 num_uv_pairs
+    Vec2f uv_pairs[num_uv_pairs]
+
+    uint32 num_triangles
+    Triangle triangles[num_triangles]
+
+ 
 ## renderer_settings 
 
 This element provides a means of overriding various settings 
@@ -2840,7 +2900,6 @@ An example of an internally defined mesh:
         </embedded>
     </mesh>
     
-
 ## model
 
 Places a mesh instance into the scene. 
